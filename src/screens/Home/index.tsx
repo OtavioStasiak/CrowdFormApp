@@ -1,28 +1,16 @@
 import React from 'react';
-import {ScrollView, Text, TouchableOpacity, View} from 'react-native';
-import ArrowUp from '../../assets/icons/arrowUp.svg';
-import Coin from '../../assets/icons/coin.svg';
-import {styles} from './styles';
+import {ScrollView, Text, View} from 'react-native';
+
 import {Header} from '../../components/Header';
+import {Portfolio} from '../../components/Portfolio';
+
+import {styles} from './styles';
 
 export function Home() {
   return (
     <View style={styles.container}>
       <Header />
-
-      <View style={styles.portfolio}>
-        <Text style={styles.portfolioTitle}>Porfolio</Text>
-        <View style={styles.portfolioContent}>
-          <Text style={styles.amount}>
-            $1,245.23 <ArrowUp />
-            <Text style={styles.portfolioPercentage}>31.82%</Text>
-          </Text>
-          <TouchableOpacity style={styles.earnRewardsButton}>
-            <Coin />
-            <Text style={styles.earnRewardsTitle}>Earn Rewards</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
+      <Portfolio />
 
       <View>
         <Text>Funds</Text>

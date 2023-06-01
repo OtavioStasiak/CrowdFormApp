@@ -3,11 +3,6 @@ import {theme} from '../../theme/theme';
 import {RFPercentage} from 'react-native-responsive-fontsize';
 
 export const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    backgroundColor: theme.colors.white_100,
-  },
   portfolio: {
     width: '100%',
     justifyContent: 'center',

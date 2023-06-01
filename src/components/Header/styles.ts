@@ -15,5 +15,10 @@ export const styles = StyleSheet.create({
   title: {
     fontFamily: theme.fonts.bold,
     fontSize: RFPercentage(1.9),
+    marginRight: 5,
+  },
+  account: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
 });
