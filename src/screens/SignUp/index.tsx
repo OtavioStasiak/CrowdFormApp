@@ -7,6 +7,7 @@ import {Button} from '../../components/Button';
 import BackIcon from '../../assets/icons/arrowLeft.svg';
 import {styles} from './styles';
 import {TermsOfServiceCheckbox} from '../../components/TermsOfServiceCheckbox';
+import {useNavigation} from '@react-navigation/native';
 
 type userData = {
   firstName: string;
@@ -19,7 +20,19 @@ export function SignUp() {
   const [checked, setChecked] = useState(false);
   const [userData, setUserData] = useState<userData>({} as userData);
 
-  async function handleRegisterUser() {}
+  const {goBack, navigate} = useNavigation();
+
+  async function handleRegisterUser() {
+    console.log(userData);
+  }
+
+  async function handleGoBack() {
+    goBack();
+  }
+
+  async function handleNavigateToSignIn() {
+    navigate('SignIn' as never);
+  }
 
   return (
     <ScrollView
@@ -27,7 +40,7 @@ export function SignUp() {
       showsVerticalScrollIndicator={false}>
       <View style={styles.container}>
         <View style={styles.header}>
-          <TouchableOpacity style={styles.backButton}>
+          <TouchableOpacity onPress={handleGoBack} style={styles.backButton}>
             <BackIcon />
           </TouchableOpacity>
 
@@ -99,13 +112,16 @@ export function SignUp() {
           checked={checked}
           onCheckPress={() => setChecked(!checked)}
         />
-        <Button title="Create account" onPress={() => console.log()} />
+        <Button title="Create account" onPress={handleRegisterUser} />
 
         <Text style={styles.registerText}>
           Already have an account?
-          <TouchableOpacity style={styles.registerButton}>
-            <Text style={styles.registerButtonText}> Log in Here </Text>
-          </TouchableOpacity>
+          <Text
+            onPress={handleNavigateToSignIn}
+            style={styles.registerButtonText}>
+            {' '}
+            Log in Here{' '}
+          </Text>
         </Text>
       </View>
     </ScrollView>

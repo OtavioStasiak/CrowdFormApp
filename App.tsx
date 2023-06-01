@@ -1,8 +1,8 @@
 import React from 'react';
-import {SignUp} from './src/screens/SignUp';
+import {Routes} from './src/routes';
 
 function App(): JSX.Element {
-  return <SignUp />;
+  return <Routes />;
 }
 
 export default App;
