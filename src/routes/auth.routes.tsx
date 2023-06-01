@@ -11,4 +11,3 @@ export function MyTabs() {
     </Tab.Navigator>
   );
 }
-xjx;

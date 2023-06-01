@@ -10,16 +10,16 @@ type Props = {
   loading?: boolean;
 };
 
-export function Button({title, onPress, loading = true}: Props) {
+export function Button({title, onPress, loading = false}: Props) {
   return (
     <TouchableOpacity
       activeOpacity={0.8}
       onPress={onPress}
       style={styles.container}>
       {loading ? (
-        <Text style={styles.title}>{title}</Text>
-      ) : (
         <ActivityIndicator size={15} color={theme.colors.white_100} />
+      ) : (
+        <Text style={styles.title}>{title}</Text>
       )}
     </TouchableOpacity>
   );

@@ -6,6 +6,8 @@ export const theme = {
     gray_200: '#CFCFCF',
     gray_300: '#A0A0A0',
     purple_100: '#770FDF',
+    purple_200: '#F7EFFF',
+    green_100: '#0FDF8F',
   },
   fonts: {
     light: 'Sora-Regular',

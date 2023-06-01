@@ -14,12 +14,12 @@ export const styles = StyleSheet.create({
   text_gray: {
     color: theme.colors.gray_300,
     fontFamily: theme.fonts.light,
-    fontSize: RFPercentage(1.8),
+    fontSize: RFPercentage(1.5),
   },
   text_button: {
     color: theme.colors.black_100,
     fontFamily: theme.fonts.light,
-    fontSize: RFPercentage(1.9),
+    fontSize: RFPercentage(1.5),
   },
   close: {
     marginLeft: '90%',

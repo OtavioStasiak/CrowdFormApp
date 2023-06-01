@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, TouchableOpacity, ScrollView} from 'react-native';
 
 import {Input} from '../../components/Input';
@@ -6,13 +6,35 @@ import {Button} from '../../components/Button';
 
 import {styles} from './styles';
 import {useNavigation} from '@react-navigation/native';
+import {useAuth} from '../../hooks/useAuth';
+import Toast from 'react-native-toast-message';
 
 export function SignIn() {
-  const {navigate} = useNavigation();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  async function handleNavigateToSignUp() {
+  const {navigate} = useNavigation();
+  const {loading, setLoading, signIn} = useAuth();
+
+  async function handleSignIn() {
+    setLoading(true);
+    try {
+      await signIn(email, password);
+    } catch (error: any) {
+      Toast.show({
+        type: 'error',
+        text1: 'Oops!',
+        text2: 'Email or password is incorrect, try again.',
+      });
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  function handleNavigateToSignUp() {
     navigate('SignUp' as never);
   }
+
   return (
     <View style={styles.container}>
       <ScrollView
@@ -26,18 +48,18 @@ export function SignIn() {
           <Input
             title="Email"
             placeholder="Email"
-            onChangeText={text => console.log(text)}
+            onChangeText={text => setEmail(text)}
           />
 
           <Input
             title="Password"
             placeholder="Password"
-            onChangeText={text => console.log(text)}
+            onChangeText={text => setPassword(text)}
             isSecureText
           />
         </View>
 
-        <Button title="Login" onPress={() => console.log()} />
+        <Button title="Login" loading={loading} onPress={handleSignIn} />
 
         <Text style={styles.registerText}>
           Don’t have an account?

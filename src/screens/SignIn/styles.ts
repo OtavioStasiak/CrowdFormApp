@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
     width: '100%',
     alignItems: 'center',
     justifyContent: 'space-between',
-    height: '20%',
+    height: '23%',
     marginTop: '10%',
     marginBottom: '8%',
   },

@@ -47,7 +47,7 @@ export const styles = StyleSheet.create({
     width: '100%',
     alignItems: 'center',
     justifyContent: 'space-between',
-    height: RFPercentage(55),
+    height: RFPercentage(45),
     marginTop: '10%',
     marginBottom: '15%',
   },
