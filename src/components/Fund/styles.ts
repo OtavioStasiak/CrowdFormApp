@@ -16,6 +16,7 @@ export const styles = StyleSheet.create({
   title: {
     fontFamily: theme.fonts.bold,
     marginTop: 10,
+    color: theme.colors.black_100,
   },
   values: {
     flexDirection: 'row',
@@ -24,6 +25,7 @@ export const styles = StyleSheet.create({
     fontFamily: theme.fonts.light,
     fontSize: RFPercentage(1.7),
     marginRight: 5,
+    color: theme.colors.black_100,
   },
   percentageContainer: {
     flexDirection: 'row',

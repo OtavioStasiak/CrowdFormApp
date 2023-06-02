@@ -16,6 +16,7 @@ export const styles = StyleSheet.create({
     fontFamily: theme.fonts.bold,
     fontSize: RFPercentage(1.9),
     marginRight: 5,
+    color: theme.colors.black_100,
   },
   account: {
     flexDirection: 'row',

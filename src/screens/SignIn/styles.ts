@@ -19,6 +19,7 @@ export const styles = StyleSheet.create({
     marginTop: 25,
     fontSize: RFPercentage(2.7),
     fontFamily: theme.fonts.bold,
+    color: theme.colors.black_100,
   },
   inputs: {
     width: '100%',

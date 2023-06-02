@@ -13,6 +13,7 @@ export const styles = StyleSheet.create({
   },
   portfolioTitle: {
     fontFamily: theme.fonts.light,
+    color: theme.colors.black_100,
   },
   portfolioContent: {
     flexDirection: 'row',
@@ -24,6 +25,7 @@ export const styles = StyleSheet.create({
     fontFamily: theme.fonts.bold,
     fontSize: RFPercentage(3),
     marginRight: -20,
+    color: theme.colors.black_100,
   },
   portfolioPercentage: {
     fontFamily: theme.fonts.light,

@@ -13,6 +13,7 @@ export const styles = StyleSheet.create({
     height: 200,
   },
   title: {
+    color: theme.colors.black_100,
     fontFamily: theme.fonts.bold,
     fontSize: RFPercentage(2),
     marginVertical: 15,
@@ -35,5 +36,6 @@ export const styles = StyleSheet.create({
   bottomCardTitle: {
     fontFamily: theme.fonts.bold,
     fontSize: RFPercentage(1.5),
+    color: theme.colors.black_100,
   },
 });

@@ -21,6 +21,7 @@ export const styles = StyleSheet.create({
     fontFamily: theme.fonts.bold,
     marginLeft: 5,
     fontSize: RFPercentage(1.9),
+    color: theme.colors.black_100,
   },
   portfolioValues: {
     marginBottom: 20,
@@ -35,6 +36,7 @@ export const styles = StyleSheet.create({
     fontFamily: theme.fonts.bold,
     fontSize: RFPercentage(2.7),
     marginBottom: 3,
+    color: theme.colors.black_100,
   },
   percentageContainer: {
     flexDirection: 'row',

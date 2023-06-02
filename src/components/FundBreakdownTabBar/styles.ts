@@ -15,5 +15,6 @@ export const styles = StyleSheet.create({
   },
   buttonTitle: {
     fontFamily: theme.fonts.bold,
+    color: theme.colors.black_100,
   },
 });
