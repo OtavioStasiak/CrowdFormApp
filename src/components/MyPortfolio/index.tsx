@@ -4,13 +4,14 @@ import ArrowUp from '../../assets/icons/arrowUp.svg';
 import PorftolioIcon from '../../assets/icons/portfolio.svg';
 
 import {styles} from './styles';
+import {theme} from '../../theme/theme';
 
 export function MyPortfolio() {
   return (
     <View style={styles.container}>
       <View style={styles.portfolio}>
         <View style={styles.portfolioHeader}>
-          <PorftolioIcon />
+          <PorftolioIcon style={{color: theme.colors.black_100}} />
           <Text style={styles.portfolioTitle}>Your Portfolio</Text>
         </View>
 
