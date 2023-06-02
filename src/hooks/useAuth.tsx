@@ -1,6 +1,13 @@
 import React, {createContext, useCallback, useContext, useState} from 'react';
 import {api} from '../services/api';
 
+type User = {
+  email: string;
+  firstName: string;
+  lastName: string;
+  token: string;
+};
+
 type AuthContextData = {
   registerUser: (
     email: string,
@@ -11,6 +18,7 @@ type AuthContextData = {
   signIn: (email: string, password: string) => Promise<any>;
   loading: boolean;
   setLoading: (status: boolean) => void;
+  user: User;
 };
 
 type AuthProviderProps = {
@@ -20,8 +28,7 @@ type AuthProviderProps = {
 export const AuthContext = createContext({} as AuthContextData);
 
 function AuthProvider({children}: AuthProviderProps) {
-  const [user, setUser] = useState<any>();
-  console.log(user);
+  const [user, setUser] = useState<User>({} as User);
   const [loading, setLoading] = useState(false);
   const registerUser = useCallback(
     async (
@@ -47,8 +54,7 @@ function AuthProvider({children}: AuthProviderProps) {
       email,
       password,
     });
-
-    console.log(response.data);
+    setUser(response.data);
 
     return response.data;
   }, []);
@@ -60,6 +66,7 @@ function AuthProvider({children}: AuthProviderProps) {
         loading,
         setLoading,
         signIn,
+        user,
       }}>
       {children}
     </AuthContext.Provider>

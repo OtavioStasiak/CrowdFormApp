@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: '5%',
     paddingVertical: '10%',
     borderBottomWidth: 1,
-    borderBottomColor: theme.colors.gray_200,
+    borderBottomColor: theme.colors.gray_100,
   },
   portfolioTitle: {
     fontFamily: theme.fonts.light,

@@ -1,13 +1,25 @@
+import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {SignIn} from '../screens/SignIn';
+import {Home} from '../screens/Home';
+import {Trade} from '../screens/Trade';
+import {Portfolio} from '../screens/Portfolio';
 
 const Tab = createBottomTabNavigator();
 
-export function MyTabs() {
+export function AuthRoutes() {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Home" component={SignIn} />
-      <Tab.Screen name="Settings" component={SignIn} />
+      <Tab.Screen options={{headerShown: false}} name="Home" component={Home} />
+      <Tab.Screen
+        options={{headerShown: false}}
+        name="Trade"
+        component={Trade}
+      />
+      <Tab.Screen
+        options={{headerShown: false}}
+        name="Portfolio"
+        component={Portfolio}
+      />
     </Tab.Navigator>
   );
 }

@@ -1,12 +1,12 @@
 import React from 'react';
 import {AuthProvider} from './src/hooks/useAuth';
 import Toast from 'react-native-toast-message';
-import {Home} from './src/screens/Home';
+import {Routes} from './src/routes';
 
 function App(): JSX.Element {
   return (
     <AuthProvider>
-      <Home />
+      <Routes />
       <Toast />
     </AuthProvider>
   );

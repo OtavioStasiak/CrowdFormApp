@@ -8,50 +8,32 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: theme.colors.white_100,
   },
-  portfolio: {
-    width: '100%',
-    justifyContent: 'center',
-    paddingHorizontal: '5%',
-    paddingVertical: '10%',
-    borderBottomWidth: 1,
-    borderBottomColor: theme.colors.gray_200,
+  funds: {
+    marginBottom: 20,
+    height: 200,
   },
-  portfolioTitle: {
-    fontFamily: theme.fonts.light,
+  title: {
+    fontFamily: theme.fonts.bold,
+    fontSize: RFPercentage(2),
+    marginVertical: 15,
+    marginLeft: 20,
   },
-  portfolioContent: {
+  bottomCards: {
+    marginTop: 20,
     flexDirection: 'row',
-    alignItems: 'center',
     justifyContent: 'space-between',
-    marginTop: 5,
+    width: '100%',
+    paddingHorizontal: 20,
   },
-  amount: {
+  bottomCard: {
+    width: 170,
+    height: 215,
+    backgroundColor: theme.colors.gray_100,
+    borderRadius: 10,
+    padding: 15,
+  },
+  bottomCardTitle: {
     fontFamily: theme.fonts.bold,
-    fontSize: RFPercentage(3),
-    marginRight: -20,
-  },
-  portfolioPercentage: {
-    fontFamily: theme.fonts.light,
-    fontSize: RFPercentage(1.8),
-    color: theme.colors.green_100,
-    textAlignVertical: 'center',
-    marginLeft: 3,
-  },
-  portfolioPercentageContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingTop: 4,
-  },
-  earnRewardsButton: {
-    backgroundColor: theme.colors.purple_200,
-    padding: 10,
-    borderRadius: 4,
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  earnRewardsTitle: {
-    fontFamily: theme.fonts.bold,
-    color: theme.colors.purple_100,
-    marginLeft: 5,
+    fontSize: RFPercentage(1.5),
   },
 });
