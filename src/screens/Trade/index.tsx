@@ -1,20 +1,13 @@
-import React from 'react';
-import {ScrollView, Text, TouchableOpacity, View} from 'react-native';
+import React, {useState} from 'react';
+import {ScrollView, Text, View} from 'react-native';
 import {TradeHeader} from '../../components/TradeHeader';
 import {MyPortfolio} from '../../components/MyPortfolio';
 
 import {styles} from './styles';
-import {theme} from '../../theme/theme';
+import {FundBreakdownTabBar} from '../../components/FundBreakdownTabBar';
 
 export function Trade() {
-  let selected = false;
-  const textStyle = selected
-    ? {color: theme.colors.black_100}
-    : {color: theme.colors.gray_300};
-
-  const borderStyle = selected
-    ? {borderBottomWidth: 2}
-    : {borderBottomWidth: 0};
+  const [seleted, setSelected] = useState('Highlighted');
   return (
     <View style={styles.container}>
       <TradeHeader title="Wind" slug="SWLO" />
@@ -22,22 +15,10 @@ export function Trade() {
         <View style={styles.fundBreakdownContainer}>
           <Text style={styles.title}>Fund Breakdown</Text>
 
-          <View style={styles.tabBar}>
-            <TouchableOpacity style={[styles.button, borderStyle]}>
-              <Text style={[styles.buttonTitle, textStyle]}>Highlighted</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={[styles.button, borderStyle]}>
-              <Text style={[styles.buttonTitle, textStyle]} t>
-                Value
-              </Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={[styles.button, borderStyle]}>
-              <Text style={[styles.buttonTitle, textStyle]}>Vintage</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={[styles.button, borderStyle]}>
-              <Text style={[styles.buttonTitle, textStyle]}>Registry</Text>
-            </TouchableOpacity>
-          </View>
+          <FundBreakdownTabBar
+            selected={seleted}
+            onPress={select => setSelected(select)}
+          />
 
           <ScrollView
             horizontal
